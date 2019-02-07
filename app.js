@@ -6,7 +6,7 @@ const UserController = require('./controllers/user-controller');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost/express-server');
+mongoose.connect('cluster0-shard-00-02-liy1z.azure.mongodb.net:27017/myDB');
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));

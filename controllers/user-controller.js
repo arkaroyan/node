@@ -1,4 +1,4 @@
-const UsersModel = require('../models/user-model');
+const UsersModel = require('../models/training-model');
 
 async function listUsers (req, res) {
   const users = await UsersModel.find({});
