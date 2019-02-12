@@ -8,9 +8,9 @@ async function listTrainings (req, res, next) {
 }
 
 async function createTraining (req, res, next) {
-  const { firstName, lastName } = req.body;
+  const { trainingName, instructorName, schedule, price, openSeats } = req.body;
 
-  const training = await TrainingsModel.create({ firstName, lastName });
+  const training = await TrainingsModel.create({ trainingName, instructorName, schedule, price, openSeats });
 
   res.send({ data: training });
 }

@@ -8,10 +8,10 @@ const ValidationMiddleware = require('./middlewares/validations');
 
 const app = express();
 
-const server = 'mongodb://arkaroyan:Bet@Cons394@cluster0-shard-00-00-liy1z.azure.mongodb.net:27017,cluster0-shard-00-01-liy1z.azure.mongodb.net:27017,cluster0-shard-00-02-liy1z.azure.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true';
+const server = 'mongodb://localhost/myDB';
 
 
-mongoose.connect(server, cb);
+mongoose.connect(server,{ useNewUrlParser: true });
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
