@@ -25,6 +25,10 @@ app.get('/trainings/:id', ValidationMiddleware.validateGetTrainingArgs, Training
 app.patch('/trainings/:id', TrainingController.updateTraning);
 app.delete('/trainings/:id', TrainingController.deleteTraining);
 
+app.use(function (req, res, next) {
+    res.status(404).send("Sorry can't find that!")
+  })
+
 app.use(ErrorHandlerMiddleware.handleError);
 
 module.exports = app;
